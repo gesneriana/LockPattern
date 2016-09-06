@@ -89,14 +89,12 @@ public class UnlockGesturePasswordActivity extends Activity {
 			if (pattern == null)
 				return;
 			if (MyApplication.getInstance().getLockPatternUtils().checkPattern(pattern)) {
-				mLockPatternView
-						.setDisplayMode(LockPatternView.DisplayMode.Correct);
-				Intent intent = new Intent(UnlockGesturePasswordActivity.this,
-						GuideGesturePasswordActivity.class);
+				mLockPatternView.setDisplayMode(LockPatternView.DisplayMode.Correct);
+				Intent intent = new Intent(UnlockGesturePasswordActivity.this, GuideGesturePasswordActivity.class);
 				// 打开新的Activity
-				startActivity(intent);
+				// startActivity(intent);
 				showToast("解锁成功");
-				finish();
+				// finish();
 			} else {
 				mLockPatternView.setDisplayMode(LockPatternView.DisplayMode.Wrong);
 				if (pattern.size() >= LockPatternUtils.MIN_PATTERN_REGISTER_FAIL) {
